@@ -13,7 +13,7 @@ $factory->define(Employee::class, function (Faker $faker) {
     	'email'      	=> $faker->unique()->safeEmail,
     	'password'      => bCrypt(123456),
     	'phone'      	=> $faker->e164PhoneNumber,
-    	'employee_id' 	=> $faker->numberBetween(0, 10000), 	
+    	'employee_id' 	=> $departmentId . $faker->year() . $faker->numberBetween(0, 999), 	
     	'address'    	=> $faker->address,
     	'birthdate'  	=> $faker->date(),
         'salary'        => $faker->numberBetween(3000, 20000),

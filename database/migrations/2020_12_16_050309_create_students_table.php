@@ -25,14 +25,14 @@ class CreateStudentsTable extends Migration
             $table->string('password');
             $table->double('gpa', 3, 2);
             $table->smallInteger('units');
-            $table->mediumText('address');
+            $table->mediumText('address')->nullable();
             $table->string('image')->nullable();
-            $table->date('birthdate');
+            $table->date('birthdate')->nullable();
             $table->enum('status', ['student', 'alumni'])->default('student');
-            $table->unsignedBigInteger('department_id');
+            $table->bigInteger('department_id')->unsigned();
 
 
-            $table->foreign('department_id')->references('id')->on('departments');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete("cascade")->onUpdate("cascade");
         });
     }
 

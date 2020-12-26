@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Password;
 |
 */
 
-
 //login:
 Route::post('/auth/login', 'Student\AuthController@login');
 

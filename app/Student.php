@@ -11,6 +11,9 @@ class Student extends Authenticatable
 {
     use Notifiable, HasApiTokens;
 
+    protected $table='students';
+    protected $fillable = ['name_en', 'name_ar', 'email', 'phone','student_id','password','gpa','units','address','image','birthdate','status','department_id'];
+
 	protected $guarded = [];
 
     /**
